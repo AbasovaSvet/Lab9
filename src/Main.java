@@ -12,12 +12,10 @@ public class Main {
         for (int i = 0; i < mass.length; i++) {
             mass[i] = scanner.nextInt();
         }
-
         System.out.println(uniqueCount(mass));
         System.out.println(uniqueCountSet(mass));
         System.out.println(uniqueCountStream(mass));
     }
-
     static int uniqueCount(int[] mass) {
         int result = 0;
         int countUnique = 0;
