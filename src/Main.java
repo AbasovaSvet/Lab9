@@ -1,8 +1,14 @@
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
-        int [ ] mas = {1, 2, 1, 2, 4, 5};
-        System.out.println(uniqueCount(mas));
+        int[] mass = {1, 2, 1, 2, 4, 5};
+        System.out.println(uniqueCount(mass));
+        System.out.println(uniqueCountSet(mass));
     }
+
     static int uniqueCount(int[] mass) {
         int result = 0;
         int countUnique = 0;
@@ -19,4 +25,11 @@ public class Main {
         return result = countUnique - count;
     }
 
+    static int uniqueCountSet(int[] mass) {
+        Set<Integer> masSet = new HashSet<>();
+        for (int x : mass) {
+            masSet.add(x);
+        }
+        return masSet.size();
+    }
 }
