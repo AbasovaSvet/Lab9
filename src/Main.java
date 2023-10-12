@@ -1,12 +1,21 @@
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        int[] mass = {1, 2, 1, 2, 4, 5};
+        System.out.printf("Введите длинну массива: ");
+        Scanner scanner = new Scanner(System.in);
+        int[] mass = new int[scanner.nextInt()];//{1, 2, 1, 2, 4, 5};
+        System.out.printf("Введите числа в созданный массив: ");
+        for (int i = 0; i < mass.length; i++) {
+            mass[i] = scanner.nextInt();
+        }
+
         System.out.println(uniqueCount(mass));
         System.out.println(uniqueCountSet(mass));
+        System.out.println(uniqueCountStream(mass));
     }
 
     static int uniqueCount(int[] mass) {
@@ -31,5 +40,9 @@ public class Main {
             masSet.add(x);
         }
         return masSet.size();
+    }
+    public static int uniqueCountStream(int[] mass)
+    {
+        return (int) Arrays.stream(mass).distinct().count();
     }
 }
